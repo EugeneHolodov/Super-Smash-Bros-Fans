@@ -1,0 +1,13 @@
+<ul class="heroes">
+  <li
+    *ngFor="let hero of heroes"
+    [@flyInOut]="'in'"
+    (click)="removeHero(hero.id)"
+    class="hero-box"
+  >
+    <div class="inner">
+      <span>{{ hero.name }}</span>
+      
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,54 @@
+<div class="content">
+  <p *ngIf="!!team && team.totalGames" class="header">
+    create match number
+    <span class="number">{{ team.totalGames + 1 }}</span> for the team
+    <span class="name">{{ team.name }}</span>
+  </p>
+
+  <section class="tournament">
+    <div *ngIf="memberList.length" class="tournament__inner-box">
+      <li
+        *ngFor="let member of memberList; let i = index"
+        [ngClass]="{
+          'first-background': i === 0,
+          'second-background white': i === 1,
+          'third-background': i === 2,
+          'other-background': i > 2
+        }"
+        class="inner"
+      >
+        <div>
+          <mat-icon *ngIf="i == 0" class="gold-medal medal black"
+            >emoji_events</mat-icon
+          >
+          <mat-icon *ngIf="i == 1" class="silver-medal medal black"
+            >military_tech</mat-icon
+          >
+          <mat-icon *ngIf="i == 2" class="bronze-medal medal white"
+            >military_tech</mat-icon
+          >
+          <span>{{ member.name }}</span>
+        </div>
+      </li>
+    </div>
+  </section>
+  <section>
+    <div class="description">
+      <h2>Select Participants</h2>
+      <p>The match must involve at least three players</p>
+    </div>
+
+    <bot-hero-list-groups
+      class="hero-list"
+      [heroes]="heroes"
+      (remove)="onRemove($event)"
+    ></bot-hero-list-groups>
+  </section>
+
+  <div class="buttons">
+    <button class="secondary" (click)="onCenceled()">Cancel</button>
+    <button class="primary" (click)="onSaved()" [disabled]="isSavingDisabled()">
+      Save
+    </button>
+  </div>
+</div>

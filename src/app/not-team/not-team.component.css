@@ -1,0 +1,8 @@
+.row {
+    margin: 30px;
+    border-bottom: 1px solid var(--accent-color);
+  }
+  
+  .row h1 {
+      color: var(--accent-color);
+  }

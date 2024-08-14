@@ -1,0 +1,120 @@
+<div class="content">
+  <p class="header">
+    <span class="header__create">create</span>
+    your
+    <span class="header__team">team</span>
+  </p>
+  <form (ngSubmit)="saveTeam()" #teamForm="ngForm">
+    <section>
+      <nav>Name</nav>
+      <div>
+        <input type="hidden" [ngModel]="team.id" name="teamId" />
+        <input
+          placeholder="Team's Name"
+          [(ngModel)]="team.name"
+          name="teamName"
+          required
+          minlength="3"
+          #teamName="ngModel"
+          [class.error]="teamName.invalid && teamName.touched"
+        />
+        <em *ngIf="teamName.errors?.['required'] && teamName.touched">
+          Please enter a team name
+        </em>
+        <em *ngIf="teamName.errors?.['minlength'] && teamName.touched">
+          Team name must be at least 3 characters
+        </em>
+      </div>
+    </section>
+    <section>
+      <nav>Team Image</nav>
+      <div>
+        <bot-image-upload
+          [requiredFileType]="'.png,.jpg,.jpeg'"
+          (fileSelected)="onFileSelected($event)"
+        ></bot-image-upload>
+      </div>
+    </section>
+    <section>
+      <nav>Members</nav>
+      <div>
+        <div class="address" *ngFor="let member of team.members; let i = index">
+          <div class="flex-group">
+            <div class="member-inner">
+              <div class="input-flex-group">
+                <input
+                  placeholder="Name"
+                  [(ngModel)]="member.name"
+                  name="memberName{{ i }}"
+                  required
+                  minlength="3"
+                  #memberName="ngModel"
+                  [class.error]="memberName.invalid && memberName.touched"
+                />
+                <em
+                  *ngIf="memberName.errors?.['required'] && memberName.touched"
+                >
+                  Please enter a name
+                </em>
+                <em
+                  *ngIf="memberName.errors?.['minlength'] && memberName.touched"
+                >
+                  Name must be at least 3 characters
+                </em>
+              </div>
+            </div>
+            <div class='add-rem__buttons'>
+              <button
+                *ngIf="team.members.length > 1"
+                (click)="remove(i)"
+                mat-mini-fab
+                color="primary"
+                class="add_remove"
+                type="button"
+              >
+                <mat-icon>remove</mat-icon>
+              </button>
+              <button
+                *ngIf="i === team.members.length - 1"
+                (click)="add()"
+                mat-mini-fab
+                color="primary"
+                class="add_remove"
+                type="button"
+              >
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <bot-member-icon-selector
+            [(ngModel)]="member.icon"
+            name="icon{{ i }}"
+          ></bot-member-icon-selector>
+        </div>
+      </div>
+    </section>
+    <div class="buttons">
+      <button
+        mat-raised-button
+        color="accent"
+        *ngIf="!teamForm.submitted"
+        type="button"
+        (click)="cancel()"
+      >
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        *ngIf="!teamForm.submitted"
+        type="submit"
+        [disabled]="teamForm.invalid"
+      >
+        Save
+      </button>
+      <button mat-flat-button color="warn" *ngIf="teamForm.submitted" disabled>
+        Saving...
+      </button>
+    </div>
+  </form>
+</div>

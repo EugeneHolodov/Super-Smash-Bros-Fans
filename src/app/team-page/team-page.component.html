@@ -1,0 +1,14 @@
+<div *ngIf="team">
+    <h1>{{ team.name }}</h1>
+    <div class="team-image">
+      <img [src]="showImage(team.image)" alt="Team Image" />
+    </div>
+    <div class="members">
+      <div class="member" *ngFor="let member of team.members">
+        <img [src]="'/assets/profile/' + showIcon(member.icon)" alt="{{ member.name }}">
+        <span>{{ member.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  

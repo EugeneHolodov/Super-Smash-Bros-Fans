@@ -1,0 +1,87 @@
+.fighter-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.fighter-header {
+  text-align: center;
+}
+
+.fighter-portrait {
+  width: 100%;
+  height: auto;
+}
+
+.fighter-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.fighter-body {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.fighter-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.fighter-video {
+  margin-top: 20px;
+}
+
+.fighter-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.series-icon {
+  width: 100px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.series-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.fighter-details__button-conteiner {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+.fighters-list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fighters-h2 {
+  font-size: 35px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.fighters-p {
+  display: flex;
+}
+
+.series-conteiner {
+  width: 100%;
+  padding: 20px;
+}

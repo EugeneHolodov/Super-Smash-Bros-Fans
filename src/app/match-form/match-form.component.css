@@ -1,0 +1,108 @@
+.content {
+  padding: 20px;
+}
+
+.header {
+  font-size: 2em;
+}
+
+.header .name {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: var(--accent-color-dark);
+}
+
+
+.header .number {
+  font-size: 2em;
+  color: var(--color-primary);
+}
+
+.tournament__inner-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--color-primary);
+  margin-bottom: 30px;
+  width: max-content;
+}
+.hero-list {
+  display: flex;
+  justify-content: center;
+}
+
+.description h2 {
+  font-size: 1.7em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.description p {
+  color: var(--color-primary);
+}
+
+.inner {
+  position: relative;
+  list-style-type: none;
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+.medal {
+  padding: 10px;
+  border-radius: 30px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.first-background {
+  background-color: var(--accent-color-dark);
+  color: white;
+}
+
+.second-background {
+  background-color: var(--accent-color);
+}
+.third-background {
+  background-color: var(--accent-color-light);
+}
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.other-background {
+  background-color: var(--background);
+}
+.gold-medal {
+  background-color: #ffd700;
+}
+
+.silver-medal {
+  background-color: silver;
+}
+
+.bronze-medal {
+  background-color: #cd7f32;
+}
+
+.buttons {
+  display: flex;
+  position: fixed;
+  width: 90%;
+  gap: 20px;
+  bottom: 0px;
+  padding: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

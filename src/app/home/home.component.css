@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  background-image: url("/assets/images/main-1.webp");
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  margin-left: -8px;
+  margin-right: -8px;
+
+}
+
+.hero-2 {
+  background-image: url("/assets/images/main-3.avif");
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+ 
+}
+
+.promoted {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 25px 5px 25px;
+  border-top: 2px solid  var(--color-primary);
+  padding: 10px 150px;
+}
+
+.promoted img {
+  width: 150px;
+  height: 150px;
+}
+
+.promo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 40px 0 40px 0;
+}
+
+.promo-main-text {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.promo-sub-text {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--accent-color-dark);
+}
+
+.robot-parts-cta {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 100px;
+  padding: 10px 0;
+}
+
+.part {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.part img {
+  width: 180px;
+  margin-bottom: 10px;
+  padding: 2px;
+  background-color: #000;
+}
+
+.white-paper {
+  display: flex;
+  height: 100%;
+  margin: 0 25px;
+}
+
+.white-paper img {
+  width: 75%;
+}
+
+.white-paper .text {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  background-color: var(--background);
+  text-align: center;
+  justify-content: space-between;
+}
+
+.white-paper .header-text {
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.white-paper .sub-text {
+  font-size: 20px;
+  color: var(--color-primary);  
+  margin-top: 10px;
+  padding: 0 15%;
+}
+
+.white-paper .sub-text p {
+  margin: 0;
+}
+
+.white-paper .large-text {
+  border-top: 2px solid #666;
+  padding: 20px 0;
+  font-size: 35px;
+  color: #000;
+}
+
+.white-paper .learn-more {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+}

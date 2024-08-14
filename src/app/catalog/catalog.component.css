@@ -1,0 +1,38 @@
+.bold {
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+.img {
+  width: 60px;
+  height: 40px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 0 100px 20px 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 25px 0;
+}
+
+.filters button {
+  width: 100px;
+}
+
+.fighters {
+  display: flex;
+  margin: 0 100px;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
