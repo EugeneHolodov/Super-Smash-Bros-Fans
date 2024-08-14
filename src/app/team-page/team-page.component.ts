@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TeamsService } from '../teams/teams.service';
+import { TeamService } from './services/team-page.service';
 import { ImageService } from '../services/image.service';
-import { ITeam } from '../create-team/team.model';
+import { IMember, ITeam } from '../create-team/team.model';
 
 @Component({
   selector: 'bot-team-page',
   templateUrl: './team-page.component.html',
-  styleUrls: ['./team-page.component.css'],
+  styleUrls: ['./team-page.component.scss'],
 })
 export class TeamPageComponent {
   path: string = '';
   team: ITeam = {} as ITeam;
-
+  displayedMembers: { rank: number, members: IMember[] }[] = [];
   constructor(
     private route: ActivatedRoute,
     private teamsSvc: TeamsService,
+    private teamSvc: TeamService,
     private imageSvc: ImageService
   ) {}
 
@@ -28,7 +30,10 @@ export class TeamPageComponent {
     this.teamsSvc.getTeam(this.path).subscribe((team) => {
       if (team) {
         this.team = team;
+        this.displayedMembers = this.teamSvc.getDisplayedMembersWithRank(team);
+        console.log('Displayed Members',this.displayedMembers);
       }
+      console.log('Team',this.team);
     });
   }
   showImage(imgUrl: string | undefined) {
