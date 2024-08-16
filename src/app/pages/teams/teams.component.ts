@@ -3,7 +3,6 @@ import { TeamsService } from './teams.service';
 import { ImageService } from 'src/app/services/image.service';
 import { ITeam } from 'src/app/create-team/team.model';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
-import { transform } from 'cypress/types/lodash';
 
 @Component({
   selector: 'bot-teams',
@@ -17,7 +16,13 @@ import { transform } from 'cypress/types/lodash';
           stagger(100, [
             animate('300ms', style({ opacity: 1, transform: ' scale(1)' })),
           ]),
-        ])
+        ], {optional: true}),
+        query(':leave', [
+          style({ opacity: 1, transform: 'scale(1)' }),
+          stagger(100, [
+            animate('300ms', style({ opacity: 0, transform: ' scale(0.8)' })),
+          ]),
+        ], {optional: true}),
       ])
       ]),
     ],

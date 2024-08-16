@@ -1,14 +1,10 @@
-.bold {
-  font-weight: bold;
-}
+.fighters {
+  padding: 20px;
+  &__title {
+    display: flex;
+    width: 100%;
+  }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  text-align: center;
 }
 
 .img {
@@ -19,7 +15,6 @@ h1 {
 .filters {
   display: flex;
   gap: 10px;
-  margin: 0 100px 20px 100px;
   justify-content: center;
   flex-wrap: wrap;
   padding: 25px 0;
@@ -31,7 +26,7 @@ h1 {
 
 .fighters {
   display: flex;
-  margin: 0 100px;
+  
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;

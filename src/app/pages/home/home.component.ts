@@ -49,7 +49,7 @@ export class HomeComponent implements AfterViewInit {
     }
 
     const welcomeIconLeftPosition = this.welcomeIconLeftElement.nativeElement.offsetTop;
-    if (scrollPosition >= welcomeIconLeftPosition - 550) { 
+    if (scrollPosition >= welcomeIconLeftPosition - 950) { 
       this.welcomeIconLeftState = 'show';
       this.welcomeIconRightState = 'show';
       this.welcomeTextState = 'show';
@@ -57,13 +57,13 @@ export class HomeComponent implements AfterViewInit {
 
     // Check for the Tournaments section
     const tournamentsPosition = this.tournamentsElement.nativeElement.offsetTop;
-    if (scrollPosition >= tournamentsPosition - 400) { 
+    if (scrollPosition >= tournamentsPosition - 700) { 
       this.tournamentsState = 'show'
     }
 
     // Check for the Parts section
     const newsPosition = this.newsElement.nativeElement.offsetTop;
-    if (scrollPosition >= newsPosition - 450) { 
+    if (scrollPosition >= newsPosition ) { 
       this.newsState = 'show';
     }
   }

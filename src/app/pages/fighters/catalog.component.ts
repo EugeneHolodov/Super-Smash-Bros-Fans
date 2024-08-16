@@ -2,12 +2,34 @@ import { Component } from '@angular/core';
 import { ProductService } from './product.service';
 import { ActivatedRoute } from '@angular/router';
 import { IFighter } from './fighter.model';
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+
 
 
 @Component({
   selector: 'bot-catalog',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.css'],
+  styleUrls: ['./catalog.component.scss'],
+  animations: [
+    trigger('in', [
+      transition('* => *', [
+        query(':enter', [
+          style({ opacity: 0, transform: 'scale(0.8)' }),
+          stagger(100, [
+            animate('300ms', style({ opacity: 1, transform: ' scale(1)' })),
+          ]),
+        ]),
+      ])
+      ]),
+      trigger('leave', [
+        transition(':leave', [
+          query(':leave', [
+            style({ opacity: 1, transform: 'scale(1)' }),
+            animate('800ms ease-in', style({ opacity: 0, transform: 'translateX(-200px)  scale(0.8)' })),        
+          ]),
+        ]),
+      ]),  
+    ],
 })
 export class CatalogComponent {
   products: any;

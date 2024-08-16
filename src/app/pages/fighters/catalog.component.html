@@ -1,6 +1,19 @@
-<div class="container">
-  <h1 class="large-text">Smash Bros Fighters</h1>
-  <div class="filters">
+<div class="conteiner fighters" [@leave]>
+  <div class="fighters__title">
+    <h1 class="title">smash bros
+      <span class="title__span title__span--accent">
+        Fighters
+      </span> 
+    </h1>
+  </div>
+  <div class="filters" *ngIf="fighters.length" [@in]="getFiltersList()">
+    <a
+      routerLink="/fighters"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="button"
+      >All
+    </a>
     <a
       class="button"
       routerLink="/fighters"
@@ -10,16 +23,9 @@
     >
       <img class="img" [src]="getFilterIcon(filt)" [alt]="filt" />
     </a>
-    <a
-      routerLink="/fighters"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      class="button"
-      >All</a
-    >
   </div>
 
-  <ul class="fighters">
+  <ul class="fighters" *ngIf="fighters.length" [@in]="getFilteredFighters()">
     <li *ngFor="let fighter of getFilteredFighters()">
       <a [routerLink]="['/fighter', fighter.name.toLowerCase()]">
         <bot-fighter-details [fighter]="fighter"></bot-fighter-details>
