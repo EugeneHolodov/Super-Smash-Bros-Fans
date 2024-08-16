@@ -8,7 +8,6 @@
     
     &--main {
       background-image: url("/assets/images/fighters-2.jpg");
-      border-bottom: 2px solid  var(--color-primary);
       height: 700px;
     }
 
@@ -18,11 +17,19 @@
       height: 500px;
 
     }
+
+    &--tournaments {
+      background-image: url("/assets/images/tournaments-7.jpg");
+      display: block;
+      height: 500px;
+
+    }
   }
 
   &__about {
     display: flex;
     align-items: center;
+    gap: 30px;
     justify-content: space-between;
     margin: 25px 25px 5px 25px;
     padding: 10px 150px;
@@ -48,12 +55,23 @@
 
   &__fighters {
     position: relative;
+    margin-bottom: 20px;
   }
 
   &__fighters-title {
     position: absolute;
+    z-index: 10;
     padding: 5px 35px 5px 20px;
     border-radius: 3px;
+    top: 30px;
+  }
+
+  &__tournaments-title {
+    position: absolute;
+    z-index: 10;
+    padding: 5px 20px 5px 35px;
+    border-radius: 3px;
+    right: 0;
     top: 30px;
   }
 

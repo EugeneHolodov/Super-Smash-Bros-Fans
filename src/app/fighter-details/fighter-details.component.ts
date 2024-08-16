@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IFighter } from '../catalog/fighter.model';
+import { IFighter } from '../pages/fighters/fighter.model';
 
 @Component({
   selector: 'bot-fighter-details',

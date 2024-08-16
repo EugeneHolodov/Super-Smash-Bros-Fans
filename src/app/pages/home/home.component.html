@@ -1,52 +1,33 @@
 <div class="conteiner home">
-  <div class="home__cover home__cover--main"></div>
+  <div [@showItem]="coverState" class="home__cover home__cover--main"></div>
 
   <div class="home__about">
     <img
+    #welcomeIconLeft [@showItem]="welcomeIconLeftState"
       src="/assets/images/icon-1.jpg"
       alt="Friendly Robot Head"
     />
-    <div class="home__about-text">
+    <div #welcomeText [@showItem]="welcomeTextState" class="home__about-text">
       <div>Welcome to Super Smash Bros Ultimate Guides!</div>
       <div class="home__about-text--accent ">
         <div>Discover Fighters</div>
         <div>Create & Manage Tournaments</div>
       </div>
     </div>
-    <img src="/assets/images/icon-7.png" alt="Big Eye Head" />
+    <img #welcomeIconRight [@showItem]="welcomeIconRightState" src="/assets/images/icon-7.png" alt="Big Eye Head" />
   </div>
 
-  <div class="home__fighters">
+  <div #fighters [@showItem]="fightersState" class="home__fighters">
     <a routerLink="/fighters" class="home__cover home__cover--fighters"></a>
     <h2 class="home__fighters-title title">FIGHTERS</h2>
   </div>
 
-  <div class="home__fighters">
-    <a routerLink="/fighters" class="home__cover home__cover--fighters"></a>
-    <h2 class="home__fighters-title title">TOURNAMENTS</h2>
-  </div>
+  <div #tournaments [@showItem]="tournamentsState" class="home__fighters">
+    <a routerLink="/teams" class="home__cover home__cover--tournaments"></a>
+    <h2 class="home__tournaments-title  title">TOURNAMENTS</h2>
+  </div> 
 
-  <ul class="robot-parts-cta">
-    <li>
-      <a
-        routerLink="/teams"
-        class="part"
-      >
-        <img
-          src="/assets/images/icon-8.png"
-          alt="Robot Heads"
-        />
-        <div>TOURNAMENTS</div>
-      </a>
-    </li>
-    
-  </ul>
-
-  
-   
-  
-
-  <div class="white-paper">
+  <!-- <div #news [@showItem]="newsState"  class="white-paper">
     <img src="/assets/images/main-4.jpg" alt="Robot Apocalyse" />
     <div class="text">
       <div>
@@ -58,5 +39,5 @@
       <div class="large-text">SUPER SMASH BROS</div>
       <a href="https://www.smashbros.com/en_US/" class="learn-more">Official Site</a>
     </div>
-  </div>
+  </div> -->
 </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TeamsService } from '../teams/teams.service';
+import { TeamsService } from '../pages/teams/teams.service';
 import { TeamService } from './services/team-page.service';
 import { ImageService } from '../services/image.service';
 import { IMember, ITeam } from '../create-team/team.model';
