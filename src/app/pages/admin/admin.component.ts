@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { TeamsService } from '../teams/teams.service';
-import { ITeamForm } from '../create-team/team.model';
+import { TeamsService } from '../../teams/teams.service';
+import { ITeamForm } from '../../create-team/team.model';
 import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'bot-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'],
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
   user$ = this.auth.user$;

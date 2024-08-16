@@ -1,10 +1,51 @@
 .team {
+  position:relative;
+  width: 100%;
+
+  &__inner-conteiner {
+    padding: 20px;
+  }
 
   &__image img {
     width: 100%;
     height: 600px;
     object-fit: cover;
     display: block;
+  }
+  &__about {
+    display: flex;
+   
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &-image {
+      width:  400px;
+    }
+    &-text {
+     display: flex;
+     align-items: center;
+     line-height: 1.5;
+     max-width: 600px;
+     min-width: 300px;
+    }
+  }
+
+  &__absolut {
+    position: absolute;
+
+    &--team-name {
+      left: 0;
+      top: 30px;
+      padding: 5px 10px 5px 20px;
+      border-radius: 3px;
+    }
+
+    &--total-games{
+      right: 0;
+      top: 450px;
+      padding: 5px 20px 5px 10px;
+      border-radius: 3px;
+    }
   }
 
   &__information {
@@ -17,12 +58,12 @@
     display: flex;
     gap: 10px;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
   &__member img {
     
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
   }
 
   &__member {
@@ -34,33 +75,94 @@
     align-items: center;
     justify-content: space-around;
     gap: 10px;
-    border: 1px solid var(--color-primary);
+    border: 1px solid #ccc;
     border-radius: 5px;
-    &-info {
-      width: 200px;
+
+    &--first {
+      img {
+        width: 150px;
+        height: 150px;
+      }
     }
-    &--first img {
+
+    &--second {
+      img {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+  }
+
+  &__info {
+    width: 200px;
+    font-size: 22px;
+    color: #000
+  }
+
+  &__tournament-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 3em;
+      color: var(--accent-color);
+      text-transform: uppercase;
+    }
+    img {
       width: 150px;
-      height: 150px;
-    }
-
-    &--second img {
-      width: 100px;
-      height: 100px;
-    }
-
-    &--third img {
-      width: 100px;
-      height: 100px;
+      
     }
   }
 
+  &__label {
+    margin-right: 7px;
+  }
 
+  &__score {
+   color: var(--accent-color);
+  }
 
-  &__member span {
-    margin-top: 5px;
-    font-size: 12px;
-    text-align: center;
+  &__name {
+    font-size: 26px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+  }
+
+  &__inner-conteiner {
+    position: relative;
+  }
+
+  &__icons-conteiner {
+    position: relative;
+  }
+
+  &__plase-icon {
+    position: absolute;
+    
+    &--first {
+      width: 100px !important;
+      height: 100px !important;
+      bottom: -10px;
+      right: -40px;
+    }
+
+    &--second {
+      width: 80px !important;
+      height: 80px !important;
+      bottom: -15px;
+      right: -35px;
+    }
+
+    &--third {
+      width: 60px !important;
+      height: 60px !important;
+      bottom: -5px;
+      right: -25px;
+    }
   }
 
 

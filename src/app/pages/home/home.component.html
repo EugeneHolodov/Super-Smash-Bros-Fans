@@ -1,17 +1,14 @@
-<div class="container">
-  <div class="hero">
-   
-  </div>
+<div class="conteiner home">
+  <div class="home__cover home__cover--main"></div>
 
-  <div class="promoted">
-   
+  <div class="home__about">
     <img
       src="/assets/images/icon-1.jpg"
       alt="Friendly Robot Head"
     />
-    <div class="promo-text">
-      <div class="promo-main-text">Welcome to Super Smash Bros Ultimate Guides!</div>
-      <div class="promo-sub-text cta">
+    <div class="home__about-text">
+      <div>Welcome to Super Smash Bros Ultimate Guides!</div>
+      <div class="home__about-text--accent ">
         <div>Discover Fighters</div>
         <div>Create & Manage Tournaments</div>
       </div>
@@ -19,7 +16,16 @@
     <img src="/assets/images/icon-7.png" alt="Big Eye Head" />
   </div>
 
-  <div class="hero-2"></div>
+  <div class="home__fighters">
+    <a routerLink="/fighters" class="home__cover home__cover--fighters"></a>
+    <h2 class="home__fighters-title title">FIGHTERS</h2>
+  </div>
+
+  <div class="home__fighters">
+    <a routerLink="/fighters" class="home__cover home__cover--fighters"></a>
+    <h2 class="home__fighters-title title">TOURNAMENTS</h2>
+  </div>
+
   <ul class="robot-parts-cta">
     <li>
       <a
@@ -31,15 +37,6 @@
           alt="Robot Heads"
         />
         <div>TOURNAMENTS</div>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/fighters" class="part">
-        <img
-        src="/assets/images/icon-9.png"
-          alt="Robot Arms"
-        />
-        <div>FIGHTERS</div>
       </a>
     </li>
     

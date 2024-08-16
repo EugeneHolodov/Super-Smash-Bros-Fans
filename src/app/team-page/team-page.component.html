@@ -1,50 +1,107 @@
 <div *ngIf="team">
   <div class="conteiner team">
-    <div class="team__image">
-      <img [src]="showImage(team.image)" alt="Team Image" />
-    </div>
-    <div class="team__information">
-      <h1>{{ team.name }}</h1>
-      <h2>
-        <span>
-          {{ team.totalGames }}
-        </span> games played
-      </h2>
-        <div class="team__members">
-          <ng-container *ngFor="let group of displayedMembers">
-            <div class="team__rank" *ngIf="team.totalGames !== 0">
-              <ng-container *ngIf="group.rank === 1">
-                <h3>First Place {{ group.members.length > 1 ? 'is shared by' : '' }}</h3>
-              </ng-container>
-              <ng-container *ngIf="group.rank === 2">
-                <h3>Second Place {{ group.members.length > 1 ? 'is shared by' : '' }}</h3>
-              </ng-container>
-              <ng-container *ngIf="group.rank === 3">
-                <h3>Third Place {{ group.members.length > 1 ? 'is shared by' : '' }}</h3>
-              </ng-container>
-              <ng-container *ngIf="group.rank === 4">
-                <h3>Other Participants </h3>
-              </ng-container>
-            </div>
-            <div 
-              class="team__member" 
-              *ngFor="let member of group.members"
-              [ngClass]="{
-                'team__member--first': group.rank === 1,
-                'team__member--second': group.rank === 2,
-                'team__member--third': group.rank === 3
-              }">
-              <img [src]="'/assets/profile/' + showIcon(member.icon)" alt="{{ member.name }}">
-              <div class="team__member-info">
-                <h3>{{ member.name }}</h3>
-                <span>{{ member.totalScore }}</span>
-  
-              </div>
-            </div>
+    <div class="team">
 
-          </ng-container>
+      <div class="team__image">
+        <img [src]="showImage(team.image)" alt="Team Image" />
+      </div>
+      <h1 class="title team__absolut team__absolut--team-name">
+        <span class=" title__span--accent title__span">{{ team.name }}</span>
+         team
+      </h1>
+      <p class='title team__absolut--team-name' *ngIf="!team.totalGames || team.totalGames === 0">
+        No Games Played 
+        <span class="title--accent">
+          yet
+        </span> 
+      </p>
+      <p class='title team__absolut team__absolut--total-games' *ngIf="team.totalGames && team.totalGames > 0">
+        <span class="title--primary">
+          {{ team.totalGames }}
+        </span> 
+        game{{ team.totalGames && team.totalGames > 1 ? 's' : '' }} played
+      </p>
+      <div class="team__inner-conteiner">
+
+
+        <div class="team__about">
+          <div class="team__about-text">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+              Ea ex dicta porro numquam rem laudantium eaque ullam omnis dolore, exercitationem doloremque facere odio magni officia laboriosam laborum corporis, assumenda praesentium.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iure cum similique adipisci aliquid. Repudiandae dolorem delectus ratione sequi impedit, 
+            repellendus facere incidunt aperiam vel dolor accusantium, autem earum accusamus.
+          </p>
+          </div>
+            <img class="team__about-image" src="assets/images/part-1.webp" alt="Team About Image" />
         </div>
-    </div>
+
+        <div class="team__about">
+          <img class="team__about-image" src="assets/images/smash-icon-6.png" alt="Team About Image" />
+          <div class="team__about-text">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+              Ea ex dicta porro numquam rem laudantium eaque ullam omnis dolore, exercitationem doloremque facere odio magni officia laboriosam laborum corporis, assumenda praesentium.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iure cum similique adipisci aliquid. Repudiandae dolorem delectus ratione sequi impedit, 
+            repellendus facere incidunt aperiam vel dolor accusantium, autem earum accusamus.
+          </p>
+          </div>
+        </div>
+
+          <div class="team__information">
+            <div *ngIf="team.totalGames !== 0" class="team__tournament-title">
+              <img class="team__about-image" src="assets/images/smash-icon-5.png" alt="Team About Image" />
+              <span>Tournament Table</span>
+              <img class="team__about-image" src="assets/images/smash-icon-3.png" alt="Team About Image" />
+            </div>
+              <div class="team__members">
+                <ng-container *ngFor="let group of displayedMembers">
+                  <div class="title" *ngIf="team.totalGames !== 0">
+                    <ng-container *ngIf="group.rank === 1">
+                      <p class="title--underline"><span class="title__span--accent title--uppercase">First</span><span class="title--primary">Place</span>{{ group.members.length > 1 ? ' is shared by' : '' }}</p>
+                    </ng-container>
+                    <ng-container *ngIf="group.rank === 2">
+                      <p class="title--underline"><span class="title__span--accent title--uppercase">Second</span><span class="title--primary">Place</span>{{ group.members.length > 1 ? ' is shared by' : '' }}</p>
+                    </ng-container>
+                    <ng-container *ngIf="group.rank === 3">
+                      <p class="title--underline"><span class="title__span--accent title--uppercase">Third</span><span class="title--primary">Place</span>{{ group.members.length > 1 ? ' is shared by' : '' }}</p>
+                    </ng-container>
+                    <ng-container *ngIf="group.rank === 4">
+                      <p class="title--underline"><span class="title--primary">Other Participants</span> </p>
+                    </ng-container>
+                  </div>
+                  <div 
+                    class="team__member" 
+                    *ngFor="let member of group.members"
+                    [ngClass]="{
+                      'team__member--first': group.rank === 1 && team.totalGames !== 0,
+                      'team__member--second': group.rank === 2,
+                    }">
+                    <div class="team__icons-conteiner">
+                      <img [src]="'/assets/profile/' + showIcon(member.icon)" alt="{{ member.name }}">
+                      <img 
+                      *ngIf="group.rank === 1 && team.totalGames !== 0"
+                      class="team__plase-icon team__plase-icon--first"src="/assets/svg/1.svg" alt="icon">
+                      <img 
+                      *ngIf="group.rank === 2 && team.totalGames !== 0"
+                      class="team__plase-icon team__plase-icon--second"src="/assets/svg/2.svg" alt="icon">
+                      <img 
+                      *ngIf="group.rank === 3 && team.totalGames !== 0"
+                      class="team__plase-icon team__plase-icon--third"src="/assets/svg/3.svg" alt="icon"> 
+                    </div>
+
+                    <div class="team__info">
+                      <p class="team__name">{{ member.name }}</p>
+                      <div>
+                        <span class="team__label">Score:</span>
+                        <span class="team__score">{{ member.totalScore }}</span>
+                      </div>
+                    </div>
+                  </div>
+      
+                </ng-container>
+              </div>
+          </div>
+        </div>
+      </div>
 
   </div>
 </div>

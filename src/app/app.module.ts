@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -16,7 +16,7 @@ import { FighterPageComponent } from './fighter-page/fighter-page.component';
 import { SafeUrlPipe } from './shared/pipes/safe-url.pipe';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { TeamsComponent } from './teams/teams.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './pages/admin/admin.component';
 import { MatchFormComponent } from './match-form/match-form.component';
 import { TeamPageComponent } from './team-page/team-page.component';
 import { MemberIconSelectorComponent } from './member-icon-selector/member-icon-selector.component';
@@ -56,6 +56,7 @@ import { NotTeamComponent } from './not-team/not-team.component';
     NotTeamComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

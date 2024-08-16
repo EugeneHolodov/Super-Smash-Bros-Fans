@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { TemplateFormControlsComponent } from './user/template-form-controls/template-form-controls.component';
 import { FighterPageComponent } from './fighter-page/fighter-page.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { TeamsComponent } from './teams/teams.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './pages/admin/admin.component';
 import { MatchFormComponent } from './match-form/match-form.component';
 import { TeamPageComponent } from './team-page/team-page.component';
 import { LoginComponent } from './login/login.component';
