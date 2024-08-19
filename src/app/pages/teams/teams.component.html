@@ -1,25 +1,41 @@
-<div *ngIf="teams.length" class="team-list" [@in]="teams">
-  <a
-    class="team-card"
-    *ngFor="let team of teams"
+<div class="conteiner">
+  <div *ngIf="teams.length" class="teams" [@in]="teams">
+    <a
+    class="teams__card"
+    *ngFor="let team of teams; let i = index"
     [routerLink]="['/team-page', team.id]"
-  >
-    <div class="member__container">
-      <div class="member__image-container">
-        <img [src]="showImage(team.image)" alt="Team Image" />
-      </div>
-      <div class="members">
-        <h2>{{ team.name }}</h2>
-        <div class="members__icons">
-          <div class="member" *ngFor="let member of team.members">
-            <img
-              [src]="'/assets/profile/' + showIcon(member.icon)"
-              alt="{{ member.name }}"
-            />
-            <span>{{ member.name }}</span>
-          </div>
+    [@hover]="team.hoverState.allState"
+    >
+    <h1 class="teams__name">{{team.name}}</h1>
+    <div
+    class="teams__team-container"
+    (mouseenter)="onMouseEnter(i)"
+    (mouseleave)="onMouseLeave(i)"
+    >
+        <img
+          class="teams__team-image"
+          [src]="showImage(team.image)"
+          alt="{{ team.name }} team cover image"
+        />
+
+        <div class="teams__team-info">
+          
+            <div
+              class="teams__member"
+              *ngFor="let member of team.members.slice(0, 4); let i = index"
+            >
+              <img
+                [src]="'/assets/profile/' + showIcon(member.icon)"
+                alt="{{ member.name }} icon"
+              />
+              <span>{{ member.name }}</span>
+            </div>
+            <span class="teams__elipces" *ngIf="team.members.length > 3"
+              >...</span
+            >
+         
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>

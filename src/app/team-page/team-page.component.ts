@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TeamsService } from '../pages/teams/teams.service';
 import { TeamService } from './services/team-page.service';
 import { ImageService } from '../services/image.service';
-import { IMember, ITeam } from '../create-team/team.model';
+import { IMember, ITeam } from '../pages/create-team/team.model';
 
 @Component({
   selector: 'bot-team-page',

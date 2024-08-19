@@ -5,7 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { TemplateFormControlsComponent } from './user/template-form-controls/template-form-controls.component';
 import { FighterPageComponent } from './pages/fighter-page/fighter-page.component';
-import { CreateTeamComponent } from './create-team/create-team.component';
+import { CreateTeamComponent } from './pages/create-team/create-team.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { MatchFormComponent } from './match-form/match-form.component';

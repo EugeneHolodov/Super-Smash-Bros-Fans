@@ -1,28 +1,26 @@
 .home {
-
   &__cover {
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
     background-position: center center;
-    
+
     &--main {
       background-image: url("/assets/images/fighters-2.jpg");
-      height: 700px;
+      min-height: 550px;
+      max-height: 90vh;
     }
 
     &--fighters {
       background-image: url("/assets/images/main-3.avif");
       display: block;
       height: 500px;
-
     }
 
     &--tournaments {
       background-image: url("/assets/images/tournaments-7.jpg");
       display: block;
       height: 500px;
-
     }
   }
 
@@ -74,12 +72,7 @@
     right: 0;
     top: 30px;
   }
-
-
 }
-
-
-
 
 .robot-parts-cta {
   display: flex;
@@ -129,7 +122,7 @@
 
 .white-paper .sub-text {
   font-size: 20px;
-  color: var(--color-primary);  
+  color: var(--color-primary);
   margin-top: 10px;
   padding: 0 15%;
 }

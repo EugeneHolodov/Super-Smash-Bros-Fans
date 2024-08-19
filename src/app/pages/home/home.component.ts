@@ -1,5 +1,17 @@
-import { Component, AfterViewInit, ElementRef, HostListener, ViewChild} from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'bot-home',
@@ -10,8 +22,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('show', style({ opacity: 1, transform: 'none' })),
       state('hide', style({ opacity: 0, transform: 'none' })),
       state('hideLeft', style({ opacity: 0, transform: 'translateX(200px)' })),
-      state('hideRight', style({ opacity: 0, transform: 'translateX(-200px)' })),
-      state('hideBottom', style({ opacity: 0, transform: 'translateY(200px)' })),
+      state(
+        'hideRight',
+        style({ opacity: 0, transform: 'translateX(-200px)' })
+      ),
+      state(
+        'hideBottom',
+        style({ opacity: 0, transform: 'translateY(200px)' })
+      ),
       transition('hide => show', animate('700ms ease-in')),
       transition('hideLeft => show', animate('700ms ease-in')),
       transition('hideRight => show', animate('700ms ease-in')),
@@ -28,8 +46,6 @@ export class HomeComponent implements AfterViewInit {
   welcomeIconRightState = 'hideRight';
   welcomeTextState = 'hideBottom';
   newsState = 'hideBottom';
-  
-
 
   // ViewChild or ViewChildren for individual or multiple elements
   @ViewChild('fighters') fightersElement!: ElementRef;
@@ -42,14 +58,16 @@ export class HomeComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     const scrollPosition = window.scrollY;
+    const halfScreenHeight = window.innerHeight / 1.5;
     // Check for the Fighters section
     const fightersPosition = this.fightersElement.nativeElement.offsetTop;
-    if (scrollPosition >= fightersPosition - 450) { 
+    if (scrollPosition >= fightersPosition - halfScreenHeight) {
       this.fightersState = 'show';
     }
 
-    const welcomeIconLeftPosition = this.welcomeIconLeftElement.nativeElement.offsetTop;
-    if (scrollPosition >= welcomeIconLeftPosition - 950) { 
+    const welcomeIconLeftPosition =
+      this.welcomeIconLeftElement.nativeElement.offsetTop;
+    if (scrollPosition >= welcomeIconLeftPosition - halfScreenHeight) {
       this.welcomeIconLeftState = 'show';
       this.welcomeIconRightState = 'show';
       this.welcomeTextState = 'show';
@@ -57,13 +75,13 @@ export class HomeComponent implements AfterViewInit {
 
     // Check for the Tournaments section
     const tournamentsPosition = this.tournamentsElement.nativeElement.offsetTop;
-    if (scrollPosition >= tournamentsPosition - 700) { 
-      this.tournamentsState = 'show'
+    if (scrollPosition >= tournamentsPosition - halfScreenHeight) {
+      this.tournamentsState = 'show';
     }
 
     // Check for the Parts section
     const newsPosition = this.newsElement.nativeElement.offsetTop;
-    if (scrollPosition >= newsPosition ) { 
+    if (scrollPosition >= newsPosition - halfScreenHeight) {
       this.newsState = 'show';
     }
   }

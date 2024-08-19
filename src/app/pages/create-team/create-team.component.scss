@@ -1,0 +1,202 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  &__input-name {
+    width: 5px;
+    background-color: var(--accent-color);
+    height: 100%;
+    transition: all 0.5s;
+    nav {
+      padding: 10px 30px;
+      width: 150px;
+      color: black;
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: all .5s;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  section {
+    display: flex;
+    gap: 20px;
+  }
+
+  section:hover .form__input-name {
+    background-color: var(--accent-color);
+    width: 300px;
+    transition: all 1s;
+  }
+
+  section:hover .form__input-name nav {
+    color: white;
+    transition: all 1s;
+  }
+
+  &__name-conteiner {
+    width: 300px;
+  }
+}
+
+.header {
+  font-size: 2em;
+
+  &__create {
+    color: var(--color-primary);
+  }
+
+  &__team {
+    font-size: 2em;
+    color: var(--accent-color-dark);
+    text-transform: uppercase;
+  }
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+// section {
+//   display: flex;
+// }
+
+// section:last-child nav {
+//   border-bottom: none;
+// }
+
+// section > div {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 10px 20px;
+//   flex-grow: 1;
+//   justify-content: center;
+// }
+
+// section div.flex-column {
+//   flex-direction: column;
+//   flex-grow: 1;
+//   justify-content: center;
+// }
+
+// section div input {
+//   max-width: 500px;
+// }
+
+// section div select {
+//   margin: 5px 0;
+//   max-width: 520px;
+// }
+
+// section div.radio {
+//   display: block;
+//   font-size: 20px;
+// }
+
+// section div {
+//   margin: 5px 10px 5px 0;
+// }
+
+// section div.radio *:not(:first-child) {
+//   margin-left: 10px;
+// }
+
+// section div.radio input[type="radio"] {
+//   margin-right: 0;
+// }
+
+// section div {
+//   display: flex;
+// }
+
+// section:hover nav {
+//   background-color: var(--accent-color);
+//   font-size: 1.6em;
+// }
+// .address {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .address:not(:first-child) {
+//   margin-top: 20px;
+// }
+
+// .add_remove {
+//   background-color: var(--color-primary-dark);
+//   cursor: pointer;
+// }
+// .add-rem__buttons {
+//   display: flex;
+//   gap: 10px;
+// }
+
+// .add_remove:hover {
+//   background-color: var(--color-primary);
+// }
+
+// .flex-group {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .flex-group input {
+//   flex-grow: 1;
+// }
+
+// .input-flex-group {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+// }
+
+input.error,
+select.error,
+textarea.error,
+.error {
+  border: 2px solid var(--color-error);
+}
+
+section div em {
+  color: var(--color-error);
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  font-style: normal;
+  display: block;
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons * {
+  flex: 1 1 auto;
+}
+.member-inner {
+  display: flex;
+  flex-direction: column;
+}

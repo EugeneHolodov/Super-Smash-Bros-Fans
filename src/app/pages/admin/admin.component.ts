@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { TeamsService } from '../teams/teams.service';
-import { ITeamForm } from '../../create-team/team.model';
+import { ITeamForm } from '../create-team/team.model';
 import { catchError, of } from 'rxjs';
 
 @Component({

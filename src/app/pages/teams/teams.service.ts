@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
-import { IMatchTo, IMember, ITeamForm, ITeamTo } from '../../create-team/team.model';
+import { Observable } from 'rxjs';
+import { IMatchTo, IMember, ITeamForm, ITeamTo } from '../create-team/team.model';
 import { MyAuthService } from 'src/app/services/auth.service';
 import { switchMap } from 'rxjs/operators';
 

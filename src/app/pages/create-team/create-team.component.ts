@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ITeam, ITeamTo } from './team.model';
-import { TeamsService } from '../pages/teams/teams.service';
+import { TeamsService } from '../teams/teams.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'bot-create-team',
   templateUrl: './create-team.component.html',
-  styleUrls: ['./create-team.component.css'],
+  styleUrls: ['./create-team.component.scss'],
 })
 export class CreateTeamComponent {
   user$ = this.auth.user$;
@@ -76,7 +76,7 @@ export class CreateTeamComponent {
   remove(index: number) {
     this.team.members.splice(index, 1);
   }
-  
+
   cancel() {
     this.team = {
       id: '',

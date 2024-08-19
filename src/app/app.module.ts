@@ -14,7 +14,7 @@ import { UserModule } from './user/user.module';
 import { FighterDetailsComponent } from './fighter-details/fighter-details.component';
 import { FighterPageComponent } from './pages/fighter-page/fighter-page.component';
 import { SafeUrlPipe } from './shared/pipes/safe-url.pipe';
-import { CreateTeamComponent } from './create-team/create-team.component';
+import { CreateTeamComponent } from './pages/create-team/create-team.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { MatchFormComponent } from './match-form/match-form.component';

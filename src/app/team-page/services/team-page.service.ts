@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IMember, ITeam } from '../../create-team/team.model';
+import { IMember, ITeam } from '../../pages/create-team/team.model';
 
 
 @Injectable({

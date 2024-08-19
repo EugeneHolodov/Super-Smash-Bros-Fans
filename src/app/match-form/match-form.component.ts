@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TeamsService } from '../pages/teams/teams.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IMember, ITeam, IMatchTo } from '../create-team/team.model';
+import { IMember, ITeam, IMatchTo } from '../pages/create-team/team.model';
 
 @Component({
   selector: 'bot-match-form',
